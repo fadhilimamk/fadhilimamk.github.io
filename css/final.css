@@ -175,7 +175,7 @@ section {
 
 .subtitle {
   font-size: 28px;
-  color: #5A54AF;
+  color: #0091EA;
   font-weight: 300;
 }
 
@@ -201,7 +201,7 @@ section {
 }
 
 .hero-right p a {
-  color: #574cdd;
+  color: #0277BD;
   text-decoration: underline;
 }
 
@@ -219,12 +219,12 @@ section {
   /* Rectangle 3: */
   display: inline-block;
   margin-top: 20px;
-  background: #5A54AF;
+  background: #0091EA;
   /* Download Resume: */
   font-family: Roboto;
   font-size: 15px;
   /*padding: 15px 50px;*/
-  color: #C3D5FF;
+  color: #FFFFFF;
   padding: 18px 0;
   width: 296px;
   text-align: center;
@@ -288,7 +288,7 @@ section {
 .process-item h3 {
   /* Discover: */
   font-size: 28px;
-  color: #5A54AF;
+  color: #0091EA;
   letter-spacing: 0;
 }
 
