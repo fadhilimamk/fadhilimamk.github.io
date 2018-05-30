@@ -1,7 +1,7 @@
 baseURL = "http://fadhil.web.id/"
 languageCode = "en-us"
 publishDir= ""
-title = "Fadhil's Adventure"
+title = "Fadhil Imam | Personal Web"
 theme = "hugo-lodi-theme"
 # googleAnalytics = "UA-XXXXXXXX-Y"
 
