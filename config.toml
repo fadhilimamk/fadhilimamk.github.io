@@ -7,7 +7,7 @@ theme = "hugo-lodi-theme"
 
 [params]
     # head theme color
-    theme_color = "#E53935"
+    theme_color = "#00B0FF"
 
     # head description
     # This is what appears on the preview when posting this site on Facebook for example
@@ -18,7 +18,7 @@ theme = "hugo-lodi-theme"
     description_photo = "portfolio.jpg"
 
     # favicon image (512x512px), place this in the static/img folder
-    favicon = "favicon.png"
+    favicon = "icon.png"
 
     # logo image (204x204px), place this in the static/img folder
     # this appears on the top left of the navigation
