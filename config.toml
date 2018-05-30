@@ -49,30 +49,31 @@ theme = "hugo-lodi-theme"
     enable = true
     
     # Place this image in the static/img folder
-    avatar = "avatar.jpg"
-    subtitle = "Hi! I'm Fadhil, a front-end developer from Manila."
+    avatar = "profil.jpg"
+    subtitle = "Hi! I'm Fadhil, an enthusiastic person in technology and design."
 
     # Each element in this array makes a new <p> tag
     # You can write this text in markdown
     hero_right = [
-    "**This is a bold paragraph** and it's amazing.",
-    "This is my [GitHub](https://github.com/fadhilimamk). It's pretty cool.",
-    "I also do a lot of coding if you didn't already know.",
-    "I study at XYZ University and I expect to graduate in 2050.",
-    "Please enjoy the rest of my website."]
+    "**Currently an informatics/ computer sience undergraduate student at Institut Teknologi Bandung (ITB). Focusing on software development and systems, and I expect to graduate in 2019. Aamiin...**.",
+    "For me, the highest achivement of a programmer is when they can make an app/ tool that can solve a real problem. So previously I also made some app to ease people doing their jobs. Please see my [Portofolio](#) to know more about them, or you can also visit my [GitHub](https://github.com/fadhilimamk). It's pretty cool.",
+    "I do a bit of writing as well. Some of my articles can be read on my [Wordpress Blog](#). Its about my opinion and also some random things.",
+    "Since on high school, I start to do some research activity, mainly on software development. I also won some research/ project competition back then. On collage, I start to do more advance research on computer science (distributed systems and storage). Hope to publish my first international paper soon. Bismillah :D",
+    "",
+    "terbentur, terbentur, terbentuk."]
 
     # Link to your resume, place your PDF in the /static folder
     resume = "resume.pdf"
 
 [params.process]
     enable = true
-    title = "My Process"
-    subtitle = "Full Process Design"
+    title = "My Activities"
+    subtitle = ""
 
 [params.case_studies]
     enable = true
-    title = "Case Studies"
-    subtitle = "Selected Works"
+    title = "Portofolio"
+    subtitle = "Selected works"
 
 [params.footer]
     enable = true

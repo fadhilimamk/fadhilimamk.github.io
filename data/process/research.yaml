@@ -1,4 +1,7 @@
-weight: 1
+weight: 2
 title: "Research"
 icon: "book.svg"
-description: "I collaborate with stakeholders, ask meaningful questions, probe user goals, motivations, to understand context."
+description: [
+  "Doing research in storage technology under GIK Lab. Still open to another research opportunity.<hr>",
+  "Research interest: distributed systems, storage, software development."
+  ]
