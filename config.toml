@@ -28,10 +28,10 @@ theme = "hugo-lodi-theme"
     email = "fadhilimamk@gmail.com"
 
     # Facebook username
-    facebook = "fadhilimamkurnia"
+    # facebook = "fadhilimamkurnia"
 
     # Twitter username
-    twitter = "fadhilimamk"
+    # twitter = "fadhilimamk"
 
     # Dribbble username
     # dribbble = ""
@@ -41,6 +41,12 @@ theme = "hugo-lodi-theme"
     
     # Medium username
     # medium = "asdf"
+
+    # Github username
+    github = "fadhilimamk"
+
+    # Wordpress link
+    wordpress = "https://fadhilik.wordpress.com"
 
 [params.nav]
     enable = true
@@ -55,15 +61,15 @@ theme = "hugo-lodi-theme"
     # Each element in this array makes a new <p> tag
     # You can write this text in markdown
     hero_right = [
-    "**Currently an informatics/ computer sience undergraduate student at Institut Teknologi Bandung (ITB). Focusing on software development and systems, and I expect to graduate in 2019. Aamiin...**.",
-    "For me, the highest achivement of a programmer is when they can make an app/ tool that can solve a real problem. So previously I also made some app to ease people doing their jobs. Please see my [Portofolio](#) to know more about them, or you can also visit my [GitHub](https://github.com/fadhilimamk). It's pretty cool.",
-    "I do a bit of writing as well. Some of my articles can be read on my [Wordpress Blog](#). Its about my opinion and also some random things.",
+    "**Currently an informatics/ computer science undergraduate student at Institut Teknologi Bandung (ITB). Focusing on software development and systems, and I expect to graduate in 2019. Aamiin...**.",
+    "For me, the highest achivement of a programmer is when they can make an app/ tool that can solve a real problem. So previously I also made some app to ease people doing their jobs. Please see my Portofolio to know more about them, or you can also visit my [GitHub](https://github.com/fadhilimamk). It's pretty cool.",
+    "I do a bit of writing as well. Some of my articles can be read on my [Blog](https://fadhilik.wordpress.com). Its about my opinion and also some random things.",
     "Since on high school, I start to do some research activity, mainly on software development. I also won some research/ project competition back then. On collage, I start to do more advance research on computer science (distributed systems and storage). Hope to publish my first international paper soon. Bismillah :D",
     "",
     "terbentur, terbentur, terbentuk."]
 
     # Link to your resume, place your PDF in the /static folder
-    resume = "resume.pdf"
+    resume = "#"
 
 [params.process]
     enable = true
