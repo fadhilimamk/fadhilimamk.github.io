@@ -1,4 +1,4 @@
-baseURL = "http://fadhil.web.id/"
+baseURL = "https://fadhil.web.id/"
 languageCode = "en-us"
 publishDir= ""
 title = "Fadhil Imam | Personal Web"
