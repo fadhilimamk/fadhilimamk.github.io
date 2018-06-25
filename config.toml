@@ -15,7 +15,7 @@ googleAnalytics = "UA-121319405-1"
 
     # head photo
     # This is what appears on the preview when posting this site on Facebook for example
-    description_photo = "portfolio.jpg"
+    description_photo = "portfolio.png"
 
     # favicon image (512x512px), place this in the static/img folder
     favicon = "icon.png"
