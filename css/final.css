@@ -180,7 +180,7 @@ section {
 }
 
 .subtitle-name {
-  font-size: 32px;
+  font-size: 34px;
   color: #0091EA;
   font-weight: 300;
 }
@@ -196,10 +196,10 @@ section {
 .hero-right p {
   /* color: #929292; */
   font-size: 16px;
-  color: #777777;
+  color: #3e3939;
   letter-spacing: 0;
   /* line-height: 25px; */
-  line-height: 1.8em;
+  line-height: 1.6em;
 }
 
 .hero-right em {
