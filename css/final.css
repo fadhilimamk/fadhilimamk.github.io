@@ -179,6 +179,12 @@ section {
   font-weight: 300;
 }
 
+.subtitle-name {
+  font-size: 32px;
+  color: #0091EA;
+  font-weight: 300;
+}
+
 .hero-left {
   width: 400px;
 }
