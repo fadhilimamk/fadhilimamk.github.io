@@ -1,0 +1,21 @@
+[
+  
+  {
+    "title": "Understanding Fast Paxos",
+    "url": "/posts/fast-paxos/",
+    "categories": "Consensus, Fast Paxos",
+    "tags": "consensus",
+    "date": "2023-06-20 09:00:00 -0400",
+    
+
+
+
+
+
+    
+    "snippet": "Fast Paxos is an optimization for the Paxos consensus protocol. Lamport explain Fast Paxos as an important building block for Generalized Paxos.Further, many advances consensus (replication) protoc...",
+    "content": "Fast Paxos is an optimization for the Paxos consensus protocol. Lamport explain Fast Paxos as an important building block for Generalized Paxos.Further, many advances consensus (replication) protocols extend the idea of Fast Paxos to build leaderless consensus protocol, such as EPaxos.In this article, I will explain how and why Fast Paxos works.Actors and Message FlowThe Happy PathThe Slow Path"
+  }
+  
+]
+
