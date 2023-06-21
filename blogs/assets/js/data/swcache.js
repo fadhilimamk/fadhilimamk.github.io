@@ -1,49 +1,49 @@
 const resource = [
     /* --- CSS --- */
-    '/blog/assets/css/style.css',
+    '/blogs/assets/css/style.css',
 
     /* --- PWA --- */
-    '/blog/app.js',
-    '/blog/sw.js',
+    '/blogs/app.js',
+    '/blogs/sw.js',
 
     /* --- HTML --- */
-    '/blog/index.html',
-    '/blog/404.html',
+    '/blogs/index.html',
+    '/blogs/404.html',
 
     
-        '/blog/categories/',
+        '/blogs/categories/',
     
-        '/blog/tags/',
+        '/blogs/tags/',
     
-        '/blog/archives/',
+        '/blogs/archives/',
     
-        '/blog/about/',
+        '/blogs/about/',
     
 
     /* --- Favicons & compressed JS --- */
     
     
-        '/blog/assets/img/favicons/android-chrome-192x192.png',
-        '/blog/assets/img/favicons/android-chrome-512x512.png',
-        '/blog/assets/img/favicons/apple-touch-icon.png',
-        '/blog/assets/img/favicons/favicon-16x16.png',
-        '/blog/assets/img/favicons/favicon-32x32.png',
-        '/blog/assets/img/favicons/favicon.ico',
-        '/blog/assets/img/favicons/mstile-150x150.png',
-        '/blog/assets/img/favicons/safari-pinned-tab.svg',
-        '/blog/assets/js/dist/categories.min.js',
-        '/blog/assets/js/dist/commons.min.js',
-        '/blog/assets/js/dist/home.min.js',
-        '/blog/assets/js/dist/misc.min.js',
-        '/blog/assets/js/dist/page.min.js',
-        '/blog/assets/js/dist/post.min.js'
+        '/blogs/assets/img/favicons/android-chrome-192x192.png',
+        '/blogs/assets/img/favicons/android-chrome-512x512.png',
+        '/blogs/assets/img/favicons/apple-touch-icon.png',
+        '/blogs/assets/img/favicons/favicon-16x16.png',
+        '/blogs/assets/img/favicons/favicon-32x32.png',
+        '/blogs/assets/img/favicons/favicon.ico',
+        '/blogs/assets/img/favicons/mstile-150x150.png',
+        '/blogs/assets/img/favicons/safari-pinned-tab.svg',
+        '/blogs/assets/js/dist/categories.min.js',
+        '/blogs/assets/js/dist/commons.min.js',
+        '/blogs/assets/js/dist/home.min.js',
+        '/blogs/assets/js/dist/misc.min.js',
+        '/blogs/assets/js/dist/page.min.js',
+        '/blogs/assets/js/dist/post.min.js'
 ];
 
 /* The request url with below domain will be cached */
 const allowedDomains = [
     
 
-    'localhost:4000',
+    'fadhil.id/blog',
 
     
 
