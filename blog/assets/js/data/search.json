@@ -2,7 +2,7 @@
   
   {
     "title": "Understanding Fast Paxos",
-    "url": "/posts/fast-paxos/",
+    "url": "/blog/posts/fast-paxos/",
     "categories": "Consensus, Fast Paxos",
     "tags": "consensus",
     "date": "2023-06-20 09:00:00 -0400",
