@@ -4,7 +4,7 @@
   <id>https://fadhil.id/blog/blogs/</id>
   <title>Distributed Systems Blog</title>
   <subtitle>Blog to share research results on distributed systems area.</subtitle>
-  <updated>2023-06-21T11:52:22-04:00</updated>
+  <updated>2023-06-26T18:06:55-04:00</updated>
   <author>
     <name>Fadhil I. Kurnia</name>
     <uri>https://fadhil.id/blog/blogs/</uri>
@@ -20,11 +20,11 @@
 
   
   <entry>
-    <title>Understanding Fast Paxos</title>
-    <link href="https://fadhil.id/blog/blogs/posts/fast-paxos/" rel="alternate" type="text/html" title="Understanding Fast Paxos" />
-    <published>2023-06-20T09:00:00-04:00</published>
+    <title>Understanding Fast-Paxos</title>
+    <link href="https://fadhil.id/blog/blogs/posts/fast-paxos/" rel="alternate" type="text/html" title="Understanding Fast-Paxos" />
+    <published>2023-06-25T09:00:00-04:00</published>
   
-    <updated>2023-06-20T09:00:00-04:00</updated>
+    <updated>2023-06-25T09:00:00-04:00</updated>
   
     <id>https://fadhil.id/blog/blogs/posts/fast-paxos/</id>
     <content src="https://fadhil.id/blog/blogs/posts/fast-paxos/" />
@@ -48,16 +48,12 @@
 
 
 
-      Fast Paxos is an optimization for the Paxos consensus protocol. 
-Lamport explain Fast Paxos as an important building block for Generalized Paxos.
-Further, many advances consensus (replication) protocols extend the idea of Fast Paxos to build leaderless consensus protocol, such as EPaxos.
-In this article, I will explain how and why Fast Paxos works.
-
-Actors and Message Flow
-
-The Happy Path
-
-The ...
+      Fast-Paxos is an optimization for the Paxos consensus protocol, Fast-Paxos eliminates 
+one one-way-delay by using larger quorum.
+Lamport explains Fast Paxos as an important building block for Generalized Paxos.
+Further, many advances consensus (or replication) protocols extend the idea of 
+Fast Paxos to build leaderless consensus protocol, such as EPaxos.
+In this article, I will explain how Fas...
     </summary>
   
 

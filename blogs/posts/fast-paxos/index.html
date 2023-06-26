@@ -43,25 +43,25 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Understanding Fast Paxos" />
+<meta property="og:title" content="Understanding Fast-Paxos" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Fast Paxos is an optimization for the Paxos consensus protocol. Lamport explain Fast Paxos as an important building block for Generalized Paxos. Further, many advances consensus (replication) protocols extend the idea of Fast Paxos to build leaderless consensus protocol, such as EPaxos. In this article, I will explain how and why Fast Paxos works." />
-<meta property="og:description" content="Fast Paxos is an optimization for the Paxos consensus protocol. Lamport explain Fast Paxos as an important building block for Generalized Paxos. Further, many advances consensus (replication) protocols extend the idea of Fast Paxos to build leaderless consensus protocol, such as EPaxos. In this article, I will explain how and why Fast Paxos works." />
+<meta name="description" content="Fast-Paxos is an optimization for the Paxos consensus protocol, Fast-Paxos eliminates one one-way-delay by using larger quorum. Lamport explains Fast Paxos as an important building block for Generalized Paxos. Further, many advances consensus (or replication) protocols extend the idea of Fast Paxos to build leaderless consensus protocol, such as EPaxos. In this article, I will explain how Fast Paxos works." />
+<meta property="og:description" content="Fast-Paxos is an optimization for the Paxos consensus protocol, Fast-Paxos eliminates one one-way-delay by using larger quorum. Lamport explains Fast Paxos as an important building block for Generalized Paxos. Further, many advances consensus (or replication) protocols extend the idea of Fast Paxos to build leaderless consensus protocol, such as EPaxos. In this article, I will explain how Fast Paxos works." />
 <link rel="canonical" href="https://fadhil.id/blog/blogs/posts/fast-paxos/" />
 <meta property="og:url" content="https://fadhil.id/blog/blogs/posts/fast-paxos/" />
 <meta property="og:site_name" content="Distributed Systems Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-06-20T09:00:00-04:00" />
+<meta property="article:published_time" content="2023-06-25T09:00:00-04:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Understanding Fast Paxos" />
+<meta property="twitter:title" content="Understanding Fast-Paxos" />
 <meta name="twitter:site" content="@fadhilkurnia" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-20T09:00:00-04:00","datePublished":"2023-06-20T09:00:00-04:00","description":"Fast Paxos is an optimization for the Paxos consensus protocol. Lamport explain Fast Paxos as an important building block for Generalized Paxos. Further, many advances consensus (replication) protocols extend the idea of Fast Paxos to build leaderless consensus protocol, such as EPaxos. In this article, I will explain how and why Fast Paxos works.","headline":"Understanding Fast Paxos","mainEntityOfPage":{"@type":"WebPage","@id":"https://fadhil.id/blog/blogs/posts/fast-paxos/"},"url":"https://fadhil.id/blog/blogs/posts/fast-paxos/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-25T09:00:00-04:00","datePublished":"2023-06-25T09:00:00-04:00","description":"Fast-Paxos is an optimization for the Paxos consensus protocol, Fast-Paxos eliminates one one-way-delay by using larger quorum. Lamport explains Fast Paxos as an important building block for Generalized Paxos. Further, many advances consensus (or replication) protocols extend the idea of Fast Paxos to build leaderless consensus protocol, such as EPaxos. In this article, I will explain how Fast Paxos works.","headline":"Understanding Fast-Paxos","mainEntityOfPage":{"@type":"WebPage","@id":"https://fadhil.id/blog/blogs/posts/fast-paxos/"},"url":"https://fadhil.id/blog/blogs/posts/fast-paxos/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Understanding Fast Paxos | Distributed Systems Blog
+  <title>Understanding Fast-Paxos | Distributed Systems Blog
   </title>
 
   <!--
@@ -474,7 +474,7 @@
         
           
             
-              <span>Understanding Fast Paxos</span>
+              <span>Understanding Fast-Paxos</span>
             
 
           
@@ -554,6 +554,363 @@
 
 
 
+  
+  
+
+  <!-- CDN URL -->
+  
+
+  <!-- Add image path -->
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+      
+    
+
+    <!-- combine -->
+    
+
+  
+
+  
+
+
 
 <!-- Add header for code snippets -->
 
@@ -612,6 +969,18 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -619,6 +988,65 @@
 
   
   
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
 
   
 
@@ -640,7 +1068,7 @@
 
 
 
-<h1 data-toc-skip>Understanding Fast Paxos</h1>
+<h1 data-toc-skip>Understanding Fast-Paxos</h1>
 
 <div class="post-meta text-muted">
     <!-- published date -->
@@ -657,13 +1085,13 @@
 
 <em
   class=""
-  data-ts="1687266000"
+  data-ts="1687698000"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Jun 20, 2023
+  Jun 25, 2023
 </em>
 
     </span>
@@ -712,9 +1140,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="64 words"
+  title="2011 words"
 >
-  <em>1 min</em> read</span>
+  <em>11 min</em> read</span>
 
     </div>
 
@@ -723,16 +1151,158 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <p>Fast Paxos is an optimization for the Paxos consensus protocol. 
-Lamport explain Fast Paxos as an important building block for Generalized Paxos.
-Further, many advances consensus (replication) protocols extend the idea of Fast Paxos to build leaderless consensus protocol, such as EPaxos.
-In this article, I will explain how and why Fast Paxos works.</p>
+  <p>Fast-Paxos is an optimization for the Paxos consensus protocol, Fast-Paxos eliminates 
+one one-way-delay by using larger quorum.
+Lamport explains Fast Paxos as an important building block for Generalized Paxos.
+Further, many advances consensus (or replication) protocols extend the idea of 
+Fast Paxos to build leaderless consensus protocol, such as EPaxos.
+In this article, I will explain how Fast Paxos works.</p>
 
-<h2 id="actors-and-message-flow"><span class="me-2">Actors and Message Flow</span><a href="#actors-and-message-flow" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="actors-and-normal-message-flow"><span class="me-2">Actors and Normal Message Flow</span><a href="#actors-and-normal-message-flow" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h2 id="the-happy-path"><span class="me-2">The Happy Path</span><a href="#the-happy-path" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>Before discussing the message flow in Fast-Paxos, let’s discuss the actors and the ballot number in Fast-Paxos.</p>
 
-<h2 id="the-slow-path"><span class="me-2">The Slow Path</span><a href="#the-slow-path" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>As in Paxos, there are three main actors in Fast-Paxos: <code class="language-plaintext highlighter-rouge">proposer</code>, <code class="language-plaintext highlighter-rouge">acceptor</code>, and <code class="language-plaintext highlighter-rouge">learner</code>.
+The <code class="language-plaintext highlighter-rouge">proposer</code> is responsible to propose valid values, the <code class="language-plaintext highlighter-rouge">acceptor</code> is responsible to 
+accept value under certain conditions, and the <code class="language-plaintext highlighter-rouge">learner</code> is responsible to handle the chosen value<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. As in Paxos, to support $f$ failed machines, we need $f+1$ proposers, $2f+1$ acceptors, and $f+1$ learners. Typical deployment co-locates all kinds of actors in each machine, i.e each machine simultaneously hosts proposer, acceptor, and learner. The figure below illustrate this typical deployment.</p>
+
+<p><a href="/blogs/assets/img/fast-paxos-machine.png" class="popup img-link "><img data-src="/blogs/assets/img/fast-paxos-machine.png" alt="Typical Paxos and Fast Paxos Deployment" class="lazyload" data-proofer-ignore></a>
+<em>Typical Deployment for Paxos and Fast-Paxos</em></p>
+
+<p>Additionally, in Fast-Paxos, other than the proposer, the client can directly propose values! this 
+is the key reason why Fast-Paxos can eliminate one one-way-delay. However, to ensure safety <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, 
+the quorum requirement need to be adjusted to accommodate this direct proposal from the client; we’ll discuss this later.</p>
+
+<p>Unlike Paxos, Fast-Paxos has two types of rounds: fast round and classic round. Respectively, each type of round is represented with fast round ballot number $b_f$ and classic ballot number $b_c$. Using integer ballot number, round 0 is automatically considered as a <em>special fast round</em>, i.e $b_f=0$.</p>
+
+<p>Let’s see how Fast-Paxos achieve consensus in three one-way delays.</p>
+
+<h3 id="initialization"><span class="me-2">Initialization</span><a href="#initialization" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>The protocol starts even before the client propose values. The proposer initializes a fast round as illustrated in the figure below.</p>
+
+<p><a href="/blogs/assets/img/fast-paxos-init.png" class="popup img-link "><img data-src="/blogs/assets/img/fast-paxos-init.png" alt="Initialization in Fast-Paxos" class="lazyload" data-proofer-ignore></a>
+<em>Initialization in Fast-Paxos: Phase1A, Phase1B, and Phase2A. The coordinator is adorned with a crown.</em></p>
+
+<ol>
+  <li>First, a proposer send prepare messages with ballot number for starting a fast round: $\texttt{Phase1A(}b_f\texttt{)}$.</li>
+  <li>The acceptor responds the prepare messages (with $\texttt{Phase1B(}b_f\texttt{)}$) only if it has not received prepare messages from higher round. The acceptor promises not to participate in any lower round.</li>
+  <li>The proposer waits for a majority of responses from the acceptors ($f+1$ acceptors). Then, the proposer propose a special value $\texttt{ANY}$ to all the acceptors, along with its fast round ballot number: $\texttt{Phase2A(}b_f\texttt{, ANY)}$. Here, we call the peroposer that already received majority responses as the <em>coordinator</em> of a round.</li>
+</ol>
+
+<p>At the end of this initialization, acceptors that already recieved the special value $\texttt{ANY}$ can accept any value proposed by a client, without the proposer involvement.</p>
+
+<p>Note that we can skip the initialization altogether for round 0! That is, the acceptors are initialized to participate in round 0 and already accepted the special value $\texttt{ANY}$. This is possible since there is no lower round than round 0, thus no chosen value is possible in lower round. This is why round 0 is considered as a special fast round in Fast-Paxos.</p>
+
+<h3 id="getting-a-value-chosen"><span class="me-2">Getting a Value Chosen</span><a href="#getting-a-value-chosen" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>After the initialization, a client can directly propose value to the acceptors. The message flows is illustrated in the figure below.</p>
+
+<p><a href="/blogs/assets/img/fast-paxos-propose.png" class="popup img-link "><img data-src="/blogs/assets/img/fast-paxos-propose.png" alt="Getting a value chosen in Fast-Paxos" class="lazyload" data-proofer-ignore></a>
+<em>Getting a value chosen in Fast-Paxos, the acceptor postpones sending Phase2B until it receives value from a client.</em></p>
+
+<ol>
+  <li>When a client want to propose value $v$, the client sends $v$ to all the acceptors: $\texttt{ClientPropose(}v\texttt{)}$.</li>
+  <li>When an acceptor receives a value $v$ from a client, the acceptor ignores $v$ if it has not accepted the special value $\texttt{ANY}$ or it already accepted another client’s value (already replaced $\texttt{ANY}$ with a different value). Otherwise, the acceptor votes for $v$ by replacing $\texttt{ANY}$ with $v$ and sending $\texttt{Phase2B(}b_f, v\texttt{)}$ to the coordinator of round $b_f$ (proposer that leads round $b_f$).</li>
+  <li>When the coordinator of round $b_f$ receives $\texttt{Phase2B(}b_f, v’\texttt{)}$ from $3/2f+1$ acceptors for the same value $v’$, then the value $v’$ is chosen. The coordinator then notifies the learners and the client (in 4).</li>
+</ol>
+
+<p>We can see this process to get a chosen value as a delayed Phase2B since in the initialization the coordinator already run Phase1A, Phase1B, and Phase2A. In Phase2A the coordinator proposes the special value $\texttt{ANY}$, the acceptor is delaying to respond with Phase2B until it receives the first value from a client.</p>
+
+<p>Note that a client is notified that its proposed value $v$ is chosen in only three one-way delays: messages 1, 2, and 4; message 3 is local on the coordinator’s machine.</p>
+
+<p>However, this run assumes $3/2f+1$ acceptors first receive the same value $v$ before receiving other values from other clients! In step 3 above, the coordinator can receive different conflicting values from the acceptors. If the coordinator receives conflicting values, it needs to do the recovery process, we call this as the slow path and I will explain this next.</p>
+
+<h2 id="recovery-the-slow-path"><span class="me-2">Recovery: The Slow Path</span><a href="#recovery-the-slow-path" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>When the coordinator finds out that $3/2f+1$ of the Phase2B messages contain different values, consensus is failed in the corrdinator’s current ballot number. In the recovery process, the coordinator needs to find a value that is safe to be proposed in the next higher round. Fast-Paxos has two kinds of recovery process: Uncoordinated and Coordinated.</p>
+
+<h3 id="uncoordinated-recovery"><span class="me-2">Uncoordinated Recovery</span><a href="#uncoordinated-recovery" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>The uncoordinated recovery is the simplest recovery process. The coordinator just need to fallback to the ordinary Paxos protocol by running Phase1 and Phase2 with higher ballot number. This recovery process also applies when the coordinator is crashed and another proposer trying to run the Paxos protocol.</p>
+
+<p>However, how does the proposer choose the correct value to propose? This is an issue since in the same round (especially fast round) there could be multiple different values accepted by the acceptors! For example, in round 0, acceptor $a_1$ accepted value $v_a$ while acceptor $a_2$ accepted value $v_b$. This is possible when there are two different clients proposed different values $v_a$ and $v_b$.</p>
+
+<p>Let’s handle this by listing all the possibilities. When a proposer completes Phase1 of Paxos (in a classic round), the proposer receives $f+1$ promises, some promises may contain different ballot number and different accepted values. A promise is in the form of Phase1B($b_c$, $vr$, $vv$), where $b_c$ is the proposer’s current ballot number, $vv$ is the value previously accepted in round $vr$.  We call the remaining $f$ acceptors that do not respond (or late to respond) as the non-responding acceptors.</p>
+
+<ul>
+  <li>
+    <p>Case-1: From the $f+1$ acceptors, there is no value accepted yet. As in Paxos, the proposer is free to propose any value it wants in Phase2A.</p>
+  </li>
+  <li>
+    <p>Case-2: From the $f+1$ acceptors, there is the highest classic round’s ballot number $b_c$ with accepted value $v’$. As in Paxos, the proposer has to repropose the value $v’$ in Phase2A since $b_c$ is the highest ballot number among the $f+1$ promises.</p>
+  </li>
+  <li>
+    <p>Case-3: From the $f+1$ acceptors, there is the highest fast round’s ballot number $b_f$ and all the $f+1$ acceptors accepted the same value $v’$. In this case, the proposer has to propose $v’$ in Phase2A since it is possible that the non-responding $1/2f$ acceptors also accepted the same value $v’$. That is, it is possible that $3/2f+1$ acceptors accepted the same value $v’$ making $v’$ as the chosen value.</p>
+  </li>
+  <li>
+    <p>Case-4: From the $f+1$ acceptors, there is the highest fast round’s ballot number $b_f$ and the $f+1$ acceptors accepted different values.</p>
+    <ul>
+      <li>Case-4a: Among the $f+1$ acceptors, some $1/2f+1$ (or majority of $f+1$) acceptors accepted the same value $v’$ and one of them participated in round $b_f$. In this case, the proposer has to propose $v’$ since it is possible that the non-responding $1/2f$ acceptors also accepted the same value $v’$. That is, there is already $f+1$ acceptors accepted the same value $v’$, making $v’$ as the chosen value.</li>
+      <li>Case-4b: Otherwise, no value is chosen yet so the proposer is free to propose any value in its classical round.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>To give a concrete example, let assume deployment with even ballot number for fast round and odd ballot number for classic round. That is, {0, 2, 4, 6, …} are the possible ballot numbers for fast round and {1, 3, 5, 7, …} are the possible ballot numbers for classic round. All the cases above are illustrated in the figure below.</p>
+
+<p><a href="/blogs/assets/img/fast-paxos-recovery.png" class="popup img-link "><img data-src="/blogs/assets/img/fast-paxos-recovery.png" alt="Possible cases during recovery in Fast-Paxos" class="lazyload" data-proofer-ignore></a>
+<em>Possible cases during recovery in Fast-Paxos.</em></p>
+
+<h3 id="coordinated-recovery"><span class="me-2">Coordinated Recovery</span><a href="#coordinated-recovery" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>The coordinated recovery in Fast-Paxos configures the proposers so the adjacent fast and classic round always handled by the same proposer. For example, the proposer in machine-1 is the owner of ballot number {0,1,10,11,20,21,…} and the proposer in machine-2 is the owner of ballot number {2,3,12,13,22,23,…}. Note that the coordinator of round 0 is also the proposer for round 1.</p>
+
+<p>This configuration enables us to skip Phase1 in the uncoordinated recovery, and in turn eliminating two one-way delays! That is because the Phase2B messages of round 0 also act as Phase1B messages of the classic round 1. Since there is no ballot number between 0 and 1, it is safe for the coordinator to do this optimization. Specifically, similar with Phase1B message, Phase2B message also prevents the acceptor to participate in lower round (a promise) while also informing the previously accepted value.</p>
+
+<p>When the coordinator receives $3/2f+1$ Phase2B messages (or alternatively, reach timeout after receiving $f+1$ Phase2B messages) and not all of them contain the same value, then the coordinator can directly handle the conflicting values as the rules in the uncoordinated recovery that I explain previously (Case 1-4).</p>
+
+<p>In the end, the coordinated recovery only adds at least two one-way delay, compared to the addition of four one-way-delays in the uncoordinated recovery.</p>
+
+<!-- ## The Quorum Requirement
+
+Why $3/2f+1$ ?
+
+## Regarding the Special Value
+
+## Regarding the Ballot Number -->
+
+<h2 id="alternative-message-flows"><span class="me-2">Alternative Message Flows</span><a href="#alternative-message-flows" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>The previous message flow is the message flow as what Lamport explained in his paper. There are multiple variants that we can have with Fast-Paxos.</p>
+
+<p>First, the client does not have to broadcast the value to all the acceptors, the client can contact a single machine (the coordinator) that will do the broadcast for the client. This is the typical client-server deployment where the client only needs to talk to a single server (replica).</p>
+
+<p><a href="/blogs/assets/img/fast-paxos-alternative.png" class="popup img-link "><img data-src="/blogs/assets/img/fast-paxos-alternative.png" alt="Alternative message flows in Fast-Paxos" class="lazyload" data-proofer-ignore></a>
+<em>Alternative message flows in Fast-Paxos.</em></p>
+
+<p>Alternatively, the acceptors can also send the Phase2B messages to the client, while sending them to the coordinator. The client can deduce the chosen value after receiving $3/2f+1$ responses from the acceptors in two one-way delays only! This is useful if the client propose a blind value, a value that require no immediate execution. Example of a blind value is a put command that does not return any value, however the client still needs to know whether the put command is chosen or not.</p>
+
+<h2 id="closing"><span class="me-2">Closing</span><a href="#closing" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>In this article, I explain about Fast-Paxos that enables consensus under three one-way delays (or two one-way delays for blind value). However, using the protocol for replicated state machine (RSM) is not straightforward. In RSM, the replicas need to agree on the sequence of commands in a log; we run consensus for each slot in the log. Since the client directly propose values to all the acceptors, the value can end up in different slot in the log! This results in a lot of conflicting values.</p>
+
+<p>Previous work, Speculative Paxos<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>, extends the idea of Fast-Paxos for RSM using speculative execution. Clients directly send commands to the replicas which speculatively execute the commands, then the replicas directly send the speculative execution results back to the client (Similar with the last alternative message flow that I explained <a href="#alternative-message-flows">previously</a>).</p>
+
+<p>Advanced replication protocol, such as EPaxos, uses dependency graph, instead of a log, to reduce the conflicting values. The dependency graph also makes such protocol more complex than its counterpart (MultiPaxos, Raft). Take a look at <a href="https://mwhittaker.github.io/publications/bipartisan_paxos.pdf">this tutorial paper</a> that explains how EPaxos works.</p>
+
+<p>In the next article, I will cover the quorum requirement in Fast-Paxos, and why we need $3/2f+1$ acceptors as the quorum in the fast round. Stay tuned!</p>
+
+<hr />
+
+<p>Footnotes:</p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>In replicated state machine (RSM), the learner is reponsible to execute the chosen value which commonly is RSM command (e.g <code class="language-plaintext highlighter-rouge">SET X 10</code>, <code class="language-plaintext highlighter-rouge">ADD X 13</code>, etc). <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>Safety: at most one value is chosen. Another way of saying safety: when a value $v$ is chosen in round $i$, then any round $j&gt;i$ always propose the same value $v$. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p><a href="https://homes.cs.washington.edu/~arvind/papers/specpaxos.pdf">Speculative Paxos</a>. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
 </div>
 
@@ -788,7 +1358,7 @@ In this article, I will explain how and why Fast Paxos works.</p>
     
       
       <a
-        href="https://twitter.com/intent/tweet?text=Understanding%20Fast%20Paxos%20-%20Distributed%20Systems%20Blog&url=https%3A%2F%2Ffadhil.id%2Fblog%2Fblogs%2Fposts%2Ffast-paxos%2F"
+        href="https://twitter.com/intent/tweet?text=Understanding%20Fast-Paxos%20-%20Distributed%20Systems%20Blog&url=https%3A%2F%2Ffadhil.id%2Fblog%2Fblogs%2Fposts%2Ffast-paxos%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Twitter"
@@ -801,7 +1371,7 @@ In this article, I will explain how and why Fast Paxos works.</p>
     
       
       <a
-        href="https://www.facebook.com/sharer/sharer.php?title=Understanding%20Fast%20Paxos%20-%20Distributed%20Systems%20Blog&u=https%3A%2F%2Ffadhil.id%2Fblog%2Fblogs%2Fposts%2Ffast-paxos%2F"
+        href="https://www.facebook.com/sharer/sharer.php?title=Understanding%20Fast-Paxos%20-%20Distributed%20Systems%20Blog&u=https%3A%2F%2Ffadhil.id%2Fblog%2Fblogs%2Fposts%2Ffast-paxos%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Facebook"
@@ -814,7 +1384,7 @@ In this article, I will explain how and why Fast Paxos works.</p>
     
       
       <a
-        href="https://t.me/share/url?url=https%3A%2F%2Ffadhil.id%2Fblog%2Fblogs%2Fposts%2Ffast-paxos%2F&text=Understanding%20Fast%20Paxos%20-%20Distributed%20Systems%20Blog"
+        href="https://t.me/share/url?url=https%3A%2F%2Ffadhil.id%2Fblog%2Fblogs%2Fposts%2Ffast-paxos%2F&text=Understanding%20Fast-Paxos%20-%20Distributed%20Systems%20Blog"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Telegram"
@@ -1237,6 +1807,27 @@ In this article, I will explain how and why Fast Paxos works.</p>
 
 <script defer src="/blogs/assets/js/dist/post.min.js"></script>
 
+
+  <!-- MathJax -->
+  <script>
+    /* see: <https://docs.mathjax.org/en/latest/options/input/tex.html#tex-options> */
+    MathJax = {
+      tex: {
+        /* start/end delimiter pairs for in-line math */
+        inlineMath: [
+          ['$', '$'],
+          ['\\(', '\\)']
+        ],
+        /* start/end delimiter pairs for display math */
+        displayMath: [
+          ['$$', '$$'],
+          ['\\[', '\\]']
+        ]
+      }
+    };
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
 
 
 
