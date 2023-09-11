@@ -44,12 +44,71 @@
         .porto-item p {
             margin: 0;
         }
-        
+
+        .hero-left {
+            width: 280px;
+        }
+
+        .hero-right {
+            width: 715px;
+        }
+
+        .news-table td:nth-child(1) {
+            padding-left: 30px;
+            vertical-align: text-top;
+        }
+        .news-table td:nth-child(2) {
+            padding-left: 5px;
+            padding-right: 5px;
+            vertical-align: text-top;
+        }
+        .news-table td:nth-child(3) {
+            padding-right: 50px;
+            vertical-align: text-top;
+        }
+        .news-table a {
+            color: #0277BD;
+        }
+
+        .section-publications {
+            width: 70%;
+            padding-right: 20px;
+        }
+        .section-publications a {
+            color: #0277BD;
+        }
+
+        .section-service {
+            width: 30%;
+            font-size: 14px;
+        }
+        .section-service a {
+            color: #0277BD;
+        }
+
+        .case-studies a {
+            color: #0277BD;
+        }
+
         @media all and (max-width:980px) {
             .porto-item {
                 width: 100%;
             }
+
+            .hero-right {
+                width: 100%;
+            }
+
+            .section-publications {
+                width: 100%;
+            }
+
+            .section-service {
+                width: 100%;
+                font-size: 16px;
+            }
         }
+
     </style>
 </head>
 
@@ -63,7 +122,7 @@
                 <a href="#" class="main-navigation-link" id="about" data-scroll-goto="0">About</a>
                 <a href="#" class="main-navigation-link" id="activity-link" data-scroll-goto="1">Publications</a>
                 <a href="/blogs" class="main-navigation-link" id="activity-link">Blogs</a>
-                <a href="#" class="main-navigation-link" id="portofolio-link" data-scroll-goto="2">Portfolio</a>
+                <a href="#" class="main-navigation-link" id="portofolio-link" data-scroll-goto="2">Projects</a>
             </div>
         </nav>
 
@@ -71,31 +130,19 @@
             <div class="hero">
                 <div class="hero-left">
                     <img src="img/profil.png" style="max-width: 75%; border-radius: 50%; size: 120%;">
-                    <h2 class="subtitle-name"><b>Fadhil I. Kurnia</b> <br><small>a lifelong learner</small></h2>
+                    <h2 class="subtitle-name">
+                        Hi, I'm <b>Fadhil</b> 👋
+                        <br>
+                        <div style="color: #0091EA; font-size: 20px; padding-right: 10px;">
+                            a distributed-systems <span style="font-weight: 550;">researcher</span> and <span style="font-weight: 550;">engineer</span>
+                        </div>
+                    </h2>
                     <div class="icons">
 
                         <a href="/static/CV_FadhilKurnia_2023.pdf" target="blank">
                             <img src="img/cv.svg" style="width: 19px;" alt="">
                         </a>
 
-                        <!-- <a href="mailto:fadhilikurnia@gmail.com">
-                                <svg width="16px" height="14px" viewBox="0 0 16 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
-                                    
-                                    <title>ui-16px-1_email-84</title>
-                                    <desc>Created with Sketch.</desc>
-                                    <defs></defs>
-                                    <g id="Portfolio" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <g transform="translate(-94.000000, -336.000000)" id="Group" fill="#505050">
-                                            <g transform="translate(94.000000, 335.000000)">
-                                                <g id="ui-16px-1_email-84" transform="translate(0.000000, 1.000000)">
-                                                    <path d="M15,0 L1,0 C0.448,0 0,0.447 0,1 L0,13 C0,13.553 0.448,14 1,14 L15,14 C15.552,14 16,13.553 16,13 L16,1 C16,0.447 15.552,0 15,0 Z M14,12 L2,12 L2,5.723 L7.504,8.868 C7.812,9.044 8.189,9.044 8.496,8.868 L14,5.723 L14,12 Z M14,3.42 L8,6.849 L2,3.42 L2,2 L14,2 L14,3.42 Z" id="Shape"></path>
-                                                </g>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </svg>
-                            </a>
-                             -->
                         <a href="https://www.linkedin.com/in/fadhilkurnia/" target="blank">
                             <svg width="20px" height="20px" viewBox="0 0 17 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
                                     
@@ -123,95 +170,133 @@
                         </a>
 
                     </div>
-                    <!-- <a href="static/CV_FadhilKurnia.pdf" class="download-resume"> -->
-                    <!-- onclick="ga('send', {hitType: 'event',eventCategory: 'CTA',eventAction: 'download'});"> -->
-                    <!-- <img style="position: relative;top: 1.8px;padding-right: 6px;" src="svg/dl-resume.svg">
-                            Download Resume/CV</a> -->
 
+                    <br>
+                    <br>
+
+                    
+                    <div>
+                        <img src="img/email.svg" style="width: 15px;"> &nbsp;fikurnia[at]cs.umass.edu <br>
+                    </div>
+                    <div style="padding-top: 5px; padding-right: 10px;">
+                        <small>If you are a CS undergrad interested in research, please contact me via email.</small>
+                    </div>
+                    
                 </div>
                 <div class="hero-right">
-                    <p>Hello there! My name is <b>Fadhil</b>, a PhD student at <a style="text-decoration: none;" href="https://www.cics.umass.edu/" target="blank">the College of Information and Computer Science</a>, University of Massachusetts Amherst. I
-                        have broad interests in <b>Distributed Systems and Networked Systems</b> , Storage, and Systems for Machine Learning. I am the recepient of the Jim Gray scholarship for CS systems researcher in 2021.</p>
-                    <p>Currently I am working on a privacy-preserving and storage efficient distributed systems with <b><a style="text-decoration: none;" href="https://people.cs.umass.edu/~arun/bio.html" target="_blank">Dr. Arun Venkataramani</a></b> in
-                        the Advanced Networked Systems Research Group. I also actively collaborate with
-                        <b><a style="text-decoration: none;" href="https://marcoserafini.github.io/" target="_blank">Dr. Marco Serafini</a></b>. I was very fortunate to work with <b><a style="text-decoration: none;" href="https://people.cs.uchicago.edu/~haryadi/" target="blank">Dr. Haryadi S. Gunawi</a></b>                        and <b><a style="text-decoration: none;" href="https://huaicheng.github.io/">Dr. Huaicheng Li</a></b> from the UCARE Lab, University of Chicago.</p>
-                    <p>I received BSc degree in Informatics/Computer Science from <a style="text-decoration: none;" href="https://itb.ac.id" target="blank">Bandung Institute of Technology (ITB)</a>, Indonesia, with cum laude distinction. During my undergraduate
-                        study there, I spent my semester break doing internships in several tech companies, such as Tokopedia, Bukalapak, and Suitmedia. Previously I also worked as a Software Engineer in Ruangguru.</p>
+                    <p> I am <b>Fadhil I. Kurnia</b>, currently a CS PhD candidate at the <a style="text-decoration: none;" href="https://www.cics.umass.edu/" target="blank">University of Massachusetts Amherst</a>. 
+                        I have broad interests in <b>Distributed Systems and Networked Systems</b>, Storage, and Systems for Machine Learning. 
+                        I am the recepient of the <a style="text-decoration: none;" href="https://www.cics.umass.edu/support">Jim Gray scholarship</a> for CS systems researcher in 2021.</p>
+                    <p> Currently, I am working on building highly efficient and privacy-preserving distributed systems with 
+                        <b><a style="text-decoration: none;" href="https://people.cs.umass.edu/~arun/bio.html" target="_blank">Arun Venkataramani</a></b> 
+                        in the <a style="text-decoration: none;" href="http://ansr.cs.umass.edu/index.html">Advanced Networked Systems Research Group</a>. 
+                        I also actively collaborate with <b><a style="text-decoration: none;" href="https://marcoserafini.github.io/" target="_blank">Marco Serafini</a></b> on efficient systems for machine learning. 
+                        I was very fortunate to worked with <b><a style="text-decoration: none;" href="https://people.cs.uchicago.edu/~haryadi/" target="blank">Haryadi S. Gunawi</a></b> 
+                        and <b><a style="text-decoration: none;" href="https://huaicheng.github.io/">Huaicheng Li</a></b> from the <b><a style="text-decoration: none;" href="https://ucare.cs.uchicago.edu/">UCARE Lab</a></b>, University of Chicago.</p>
+                    <p> I received a BSc degree in Informatics/Computer Science from <a style="text-decoration: none;" href="https://itb.ac.id" target="blank">Bandung Institute of Technology (ITB)</a> with cum laude distinction. 
+                        I have a good deal of software engineering experiences at several big tech companies in Indonesia, such as Tokopedia (GoTo), Bukalapak, Suitmedia, and Ruangguru.</p>
                     <br>
-                    <img src="img/email.svg" style="width: 15px;"> &nbsp;fikurnia[at]cs.umass.edu |&nbsp; <img src="img/laptop.svg" style="width: 15px;"> &nbsp;CS PhD Student at UMass Amherst<br>
+                    <div>
+                        <b>🗞️ &nbsp;Recent News:</b>
+                        <div style="max-height: 200px; overflow-y: auto;">
+                            <table class="news-table" >
+                                <tr><td> 2023.09 </td><td> - </td> <td> OPaxos is accepted in SoCC'23 🎉</td></tr>
+                                <tr><td> 2023.06 </td><td> - </td> <td> Selected as an <a href="https://suri.epfl.ch/">EPFL SURI Fellow</a>, presenting OPaxos' poster in Lausanne, Switzerland ✈️</td></tr>
+                                <tr><td> 2023.05 </td><td> - </td> <td> Passed my PhD Candidacy! </td>
+                                <tr><td> 2022.11 </td><td> - </td> <td> Received travel grant for HotNets'22 in Austin, TX ✈️ </td>
+                                <tr><td> 2021.08 </td><td> - </td> <td> Received the Jim Gray scholarship 🎉! </td>
+                                <tr><td> 2021.02 </td><td> - </td> <td> Join <a href="https://research.google/outreach/csrmp/" target="_blank">CS Research Mentorship Program (CSRMP)</a> remotely in Google Research this Spring! </td>
+                                <tr><td> 2020.08 </td><td> - </td> <td> Start my PhD journey in UMass Amherst. </td>
+                                <tr><td> 2020.02 </td><td> - </td> <td> Work as a fulltime software engineer in Ruangguru. </td>
+                                <tr><td> 2019.07 </td><td> - </td> <td> Graduate from ITB with cum laude distinction 🎓🎉! </td>
+                                <tr><td> 2019.01 </td><td> - </td> <td> Receive travel grant to attend the South East Asia Machine Learning School (<a href="https://sites.google.com/view/seamls/home" target="blank">SEAMLS</a>). </td>
+                                <tr><td> 2019.01 </td><td> - </td> <td> Receive travel grant to visit KAIST School of Computing (SoC) in Daejeon, South Korea ✈️</td>
+                              </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section data-scroll-index="1">
+        <section>
             <div class="hero">
-                <div class="hero-left" style="text-align: left; margin: 0;">
-                    <div class="process" name="education">
-                        <div class="header">
-                            <a href="/pubs.html" target="blank">
-                                <h1 class="title" style="color:#0277BD"><img src="svg/book.svg"> Publications</h1>
-                            </a>
-                        </div>
-                        <div>
-                            <div class="pub-item">
-                                <h4 style="margin-bottom: 0;">Oblivious Paxos: Privacy-Preserving Consensus Over Secret Shares</h4>
-                                <small>Fadhil I. Kurnia, Arun Venkataramani</small>
+                <div data-scroll-index="1" class="section-publications">
+                    <h1 style="color:#0277BD; margin-bottom: 0px;">📚 Publications</h1>
+
+                    <div style="text-align: left; margin: 0;">
+                        <div class="process" name="education">
+                            <div>
+                                <div class="pub-item">
+                                    <h4 style="margin-bottom: 0;">Oblivious Paxos: Privacy-Preserving Consensus Over Secret Shares</h4>
+                                    <small><b>Fadhil I. Kurnia</b> and Arun Venkataramani</small>
+                                    <br>
+                                    <small><i><b>ACM Symposium on Cloud Computing (SoCC) 2023</b></i></small>
+                                    <br>
+                                    <small>
+                                        <a href="#" target="blank">[PAPER]</a>
+                                        <a href="#" target="blank">[SLIDE]</a>
+                                    </small>
+                                </div>
+                                <div class="pub-item">
+                                    <h4 style="margin-bottom: 0;">Extending and Programming the NVMe I/O Determinism Interface for Flash Arrays</h4>
+                                    <small>Huaicheng Li, Martin L. Putra,  Ronald Shi, <b>F​adhil I. Kurnia</b>,​ Xing Lin, Jaeyoung Do, A. I. Kistijantoro, Gregory R. Ganger, Haryadi S. Gunawi </small>
+                                    <br>
+                                    <small><i><b>ACM Transaction on Storage 2022</b></i></small>
+                                    <br>
+                                    <small><a href="https://dl.acm.org/doi/abs/10.1145/3568427" target="blank">[PAPER]</a></small>
+                                </div>
+                                <div class="pub-item">
+                                    <h4 style="margin-bottom: 0;">Garbage Collection Scheduling to Minimize Collision in SSD Array</h4>
+                                    <small><b>F​adhil I. Kurnia</b></small>
+                                    <br>
+                                    <small><i><b>Bachelor Thesis, 2019</b>, advisors: Dr. Achmad I. Kistijantoro, Riza S. Perdana</i></small>
+                                    <br>
+                                    <small>
+                                        <a href="https://digilib.itb.ac.id/index.php/gdl/view/39580" target="blank">[ABS]</a>
+                                        <a href="static/ta_ppt.pdf" target="blank">[SLIDE]</a>
+                                        <a href="https://github.com/fadhilkurnia/ssdsim" target="_blank">[CODE]</a>
+                                        <a href="static/tugas_akhir.pdf" target="blank">[PAPER (in Bahasa Indonesia)]</a>
+                                    </small>
+                                </div>
                                 <br>
-                                <small><i><b>ACM Symposium on Cloud Computing (SoCC) 2023</b></i></small>
-                            </div>
-                            <div class="pub-item">
-                                <h4 style="margin-bottom: 0;">Extending and Programming the NVMe I/O Determinism Interface for Flash Arrays</h4>
-                                <small>Huaicheng Li, Martin L. Putra,  Ronald Shi, <b>F​adhil I. Kurnia</b>,​ Xing Lin, Jaeyoung Do, A. I. Kistijantoro, Gregory R. Ganger, Haryadi S. Gunawi </small>
+                                <div class="pub-item">
+                                    <h4 style="margin: 0">H-Touch: Mobile App for Visually Impaired People</h4>
+                                    <small><b>Fadhil I. Kurnia</b> and Dzaky Zakiyal Fawwas</small><br>
+                                    <small>Android app for visually impaired people, we organize the buttons to be similar as dot in braille characters. Tested with Sahabat Mata Community in Semarang. Awarded with <b>Gold Medal in 2014 Indonesian Science Project Olympiad (<a href="https://ispo.or.id/" target="blank">ISPO</a>)</b>, computer category.</small>
+                                    <br>
+                                    <small>
+                                        <a href="https://www.tribunnews.com/regional/2014/02/24/dua-siswa-sma-di-semarang-ciptakan-aplikasi-smartphone-untuk-tunanetra?.tsrc=rawdd" target="_blank">[regional-news]</a> 
+                                        <a href="https://jogja.antaranews.com/berita/317707/siswa-sma-ciptakan-aplikasi-hp-khusus-tunanetra" target="_blank">[local-news]</a>
+                                        <a href="static/htouch14.pdf" target="blank">[REPORT (in Bahasa Indonesia)]</a>
+                                    </small>
+                                </div>
                                 <br>
-                                <small><i><b>ACM Transaction on Storage 2022</b></i></small>
-                                <br>
-                                <small><a href="https://dl.acm.org/doi/abs/10.1145/3568427" target="blank">[PAPER]</a></small>
-                            </div>
-                            <div class="pub-item">
-                                <h4 style="margin-bottom: 0;">Garbage Collection Scheduling to Minimize Collision in SSD Array</h4>
-                                <small><b>F​adhil I. Kurnia</b></small>
-                                <br>
-                                <small><i><b>Bachelor Thesis, 2019</b>, advisors: Dr. Achmad I. Kistijantoro, Riza S. Perdana</i></small>
-                                <br>
-                                <small><a href="https://digilib.itb.ac.id/index.php/gdl/view/39580" target="blank">[ABS]</a><a href="static/tugas_akhir.pdf" target="blank">[PAPER (ID)]</a><a href="static/ta_ppt.pdf" target="blank">[SLIDE]</a> <a href="https://github.com/fadhilkurnia/ssdsim" target="_blank">[CODE]</a></small>
-                            </div>
-                            <br>
-                            <div class="pub-item">
-                                <h4 style="margin: 0">H-Touch: Mobile App for Visually Impaired People</h4>
-                                <small>Android app for visually impaired people, we organize the buttons to be similar as dot in braille characters. Tested with Sahabat Mata Community in Semarang. Awarded with <b>Gold Medal in 2014 Indonesian Science Project Olympiad (<a href="https://ispo.or.id/" target="blank">ISPO</a>)</b>, computer category.</small>
-                                <br>
-                                <small><a href="https://www.tribunnews.com/regional/2014/02/24/dua-siswa-sma-di-semarang-ciptakan-aplikasi-smartphone-untuk-tunanetra?.tsrc=rawdd" target="_blank">[regional-news]</a> <a href="https://jogja.antaranews.com/berita/317707/siswa-sma-ciptakan-aplikasi-hp-khusus-tunanetra" target="_blank">[local-news]</a></small>
-                            </div>
-                            <br>
-                            <div class="pub-item">
-                                <h4 style="margin: 0">Faster System: RFID-based Self Checkout</h4>
-                                <small>Point of Sales (PoS) system using RFID technology. All the customer's groceries can be calculated in less than a second. Awarded with <b>Gold Medal in 2013 <a href="https://infomatrix.ro/" target="blank">Informatix Competition</a></b>, Bucharest, Romania.</small>
-                                <br>
-                                <small><a href="https://edukasi.kompas.com/read/2013/06/15/16000088/NaN" target="_blank">[national-news]</a></small>
+                                <div class="pub-item">
+                                    <h4 style="margin: 0">Faster System: RFID-based Self Checkout</h4>
+                                    <small><b>Fadhil I. Kurnia</b> and M. Muhlas Abror</small><br>
+                                    <small>Point of Sales (PoS) system using RFID technology. All the customer's groceries can be calculated in less than a second. Awarded with <b>Gold Medal in 2013 <a href="https://infomatrix.ro/" target="blank">Informatix Competition</a></b>, Bucharest, Romania.</small>
+                                    <br>
+                                    <small>
+                                        <a href="https://edukasi.kompas.com/read/2013/06/15/16000088/NaN" target="_blank">[national-news]</a>
+                                        <a href="static/faster_system13.pdf" target="blank">[REPORT]</a>
+                                    </small>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
-                <div class="hero-right">
-                    <div class="process" name="research">
-                        <div class="header">
-                            <h1 class="title" style="color:#0277BD"><img src="svg/rulerpencil.svg"> News</h1>
-                        </div>
-                        <div style="font-size: medium;">
-                            <ul>
-                                <li>2023.09 - OPaxos is accepted in SoCC'23 🎉</li>
-                                <li>2023.06 - Accepted as an EPFL SURI Fellowship, presenting OPaxos' poster in Lausanne ✈️</li>
-                                <li>2023.05 - Passed my PhD Candidacy!</li>
-                                <li>2022.11 - Received travel grant for HotNets'22 ✈️</li>
-                                <li>2021.08 - Received the Jim Gray scholarship 🎉!</li>
-                                <li>2021.02 - Join <a href="https://research.google/outreach/csrmp/" target="_blank">CS Research Mentorship Program (CSRMP)</a> remotely in Google Research this Spring!</li>
-                                <li>2020.08 - Start my PhD journey in UMass Amherst.</li>
-                                <li>2020.02 - Work as a fulltime software engineer in Ruangguru.</li>
-                                <li>2019.07 - Graduate from ITB with cum laude distinction 🎓🎉!</li>
-                                <li>2019.01 - Receive travel grant to attend the South East Asia Machine Learning School (<a href="https://sites.google.com/view/seamls/home" target="blank">SEAMLS</a>).</li>
-                                <li>2019.01 - Receive travel grant to visit KAIST School of Computing (SoC) in Daejeon, South Korea ✈️</li>
-                            </ul>
-                        </div>
+                <div class="section-service">
+                    <h1 style="color:#0277BD">💁 Service</h1>
+                    <div class="desc">
+                        <ul style="margin: 0; padding-left: 5%;">
+                            <li>Artifact Evaluation Comittee in SIGCOMM'23</li>
+                            <li>Artifact Evaluation Comittee in Usenix ATC'23</li>
+                            <li>Artifact Evaluation Comittee in OSDI'23</li>
+                            <li>Artifact Evaluation Comittee in SIGCOMM'22</li>
+                            <li>Artifact Evaluation Comittee in Usenix ATC'22</li>
+                            <li>Artifact Evaluation Comittee in <a href="https://sysartifacts.github.io/eurosys2022/organizers" target="blank">EuroSys'22</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -220,34 +305,23 @@
         <section data-scroll-index="2" style="padding-top: 5px;">
             <div class="case-studies" name="service-oss">
                 <div style="margin-top: 1em;">
-                    <div class="porto-item">
-                        <div class="desc" style="width: 90%;">
-                            <div class="header">
-                                <h2 class="subtitle" style="margin-top: 0;">Service</h2>
-                            </div>
-                            <ul style="margin: 0; padding-left: 5%;">
-                                <li>Artifact Evaluation Comittee in Usenix OSDI'22</li>
-                                <li>Artifact Evaluation Comittee in Usenix ATC'22</li>
-                                <li>Artifact Evaluation Comittee in ACM <a href="https://sysartifacts.github.io/eurosys2022/organizers" target="blank">EuroSys'22</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="porto-item">
-                        <div class="desc" style="width: 90%;">
-                            <div class="header">
-                                <h2 class="subtitle" style="margin-top: 0;">Open-source Software</h2>
-                            </div>
-                            <ul style="margin: 0; padding-left: 5%;">
-                                <li>🐿️ Go-Shamir: Scalable secret-sharing implementation for multicore architecture
-                                    <br>
-                                    <a class="github-button" href="https://github.com/fadhilkurnia/shamir" data-show-count="true" aria-label="Star fadhilkurnia/ssdsim on GitHub">Star</a>
-                                    <a class="github-button" href="https://github.com/fadhilkurnia/shamir/fork" data-show-count="true" aria-label="Fork fadhilkurnia/ssdsim on GitHub">Fork</a>
-                                </li>
-                                <li>💽 Fork of SSDSim that support RAID emulation <br>
-                                    <a class="github-button" href="https://github.com/fadhilkurnia/ssdsim" data-show-count="true" aria-label="Star fadhilkurnia/ssdsim on GitHub">Star</a>
-                                    <a class="github-button" href="https://github.com/fadhilkurnia/ssdsim/fork" data-show-count="true" aria-label="Fork fadhilkurnia/ssdsim on GitHub">Fork</a>
-                                </li>
-                            </ul>
+                    <div class="">
+                        <div class="desc">
+                            <h1 style="color:#0277BD;">🧑‍💻 Opensource Software</h2>
+
+                            <p>
+                                🐿️ Go-Shamir: Scalable secret-sharing implementation for multicore architecture
+                                <br>
+                                <a class="github-button" href="https://github.com/fadhilkurnia/shamir" data-show-count="true" aria-label="Star fadhilkurnia/ssdsim on GitHub">Star</a>
+                                <a class="github-button" href="https://github.com/fadhilkurnia/shamir/fork" data-show-count="true" aria-label="Fork fadhilkurnia/ssdsim on GitHub">Fork</a>
+                            </p>
+
+                            <p> 💽 SSDSim-RAID: Fork of SSDSim that support RAID emulation 
+                                <br>
+                                <a class="github-button" href="https://github.com/fadhilkurnia/ssdsim" data-show-count="true" aria-label="Star fadhilkurnia/ssdsim on GitHub">Star</a>
+                                <a class="github-button" href="https://github.com/fadhilkurnia/ssdsim/fork" data-show-count="true" aria-label="Fork fadhilkurnia/ssdsim on GitHub">Fork</a>
+                            </p>
+
                         </div>
                     </div>
                 </div>
@@ -259,6 +333,9 @@
             <div class="case-studies" name="portofolio">
                 <div class="header">
                     <h2 class="subtitle">Other Projects</h2>
+                    <p>
+                        The following projects are more customer oriented than my other projects. 
+                        These projects were done when I worked in a software agency, others are assignments from the courses I took.</p>
                 </div>
                 <div style="margin-top: 1em;">
                     <div class="porto-item">
@@ -388,7 +465,7 @@
         </section>
 
         <section>
-            <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=300&t=tt&d=Dc19VCTOhbBRjsE58ctwvs9A-SzrsB_JOkI_sMn2pjk&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=808080'></script>
+            <!-- <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=300&t=tt&d=Dc19VCTOhbBRjsE58ctwvs9A-SzrsB_JOkI_sMn2pjk&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=808080'></script> -->
         </section>
 
         <footer>
