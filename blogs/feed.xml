@@ -4,7 +4,7 @@
   <id>https://fadhil.id/blog/blogs/</id>
   <title>Distributed Systems Blog</title>
   <subtitle>Blog to share research results on distributed systems area.</subtitle>
-  <updated>2023-06-26T18:06:55-04:00</updated>
+  <updated>2023-09-11T16:37:40-04:00</updated>
   <author>
     <name>Fadhil I. Kurnia</name>
     <uri>https://fadhil.id/blog/blogs/</uri>
@@ -24,7 +24,7 @@
     <link href="https://fadhil.id/blog/blogs/posts/fast-paxos/" rel="alternate" type="text/html" title="Understanding Fast-Paxos" />
     <published>2023-06-25T09:00:00-04:00</published>
   
-    <updated>2023-06-25T09:00:00-04:00</updated>
+    <updated>2023-06-26T18:07:17-04:00</updated>
   
     <id>https://fadhil.id/blog/blogs/posts/fast-paxos/</id>
     <content src="https://fadhil.id/blog/blogs/posts/fast-paxos/" />
@@ -49,7 +49,7 @@
 
 
       Fast-Paxos is an optimization for the Paxos consensus protocol, Fast-Paxos eliminates 
-one one-way-delay by using larger quorum.
+one one-way delay by using larger quorum.
 Lamport explains Fast Paxos as an important building block for Generalized Paxos.
 Further, many advances consensus (or replication) protocols extend the idea of 
 Fast Paxos to build leaderless consensus protocol, such as EPaxos.

@@ -45,8 +45,8 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Understanding Fast-Paxos" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Fast-Paxos is an optimization for the Paxos consensus protocol, Fast-Paxos eliminates one one-way-delay by using larger quorum. Lamport explains Fast Paxos as an important building block for Generalized Paxos. Further, many advances consensus (or replication) protocols extend the idea of Fast Paxos to build leaderless consensus protocol, such as EPaxos. In this article, I will explain how Fast Paxos works." />
-<meta property="og:description" content="Fast-Paxos is an optimization for the Paxos consensus protocol, Fast-Paxos eliminates one one-way-delay by using larger quorum. Lamport explains Fast Paxos as an important building block for Generalized Paxos. Further, many advances consensus (or replication) protocols extend the idea of Fast Paxos to build leaderless consensus protocol, such as EPaxos. In this article, I will explain how Fast Paxos works." />
+<meta name="description" content="Fast-Paxos is an optimization for the Paxos consensus protocol, Fast-Paxos eliminates one one-way delay by using larger quorum. Lamport explains Fast Paxos as an important building block for Generalized Paxos. Further, many advances consensus (or replication) protocols extend the idea of Fast Paxos to build leaderless consensus protocol, such as EPaxos. In this article, I will explain how Fast Paxos works." />
+<meta property="og:description" content="Fast-Paxos is an optimization for the Paxos consensus protocol, Fast-Paxos eliminates one one-way delay by using larger quorum. Lamport explains Fast Paxos as an important building block for Generalized Paxos. Further, many advances consensus (or replication) protocols extend the idea of Fast Paxos to build leaderless consensus protocol, such as EPaxos. In this article, I will explain how Fast Paxos works." />
 <link rel="canonical" href="https://fadhil.id/blog/blogs/posts/fast-paxos/" />
 <meta property="og:url" content="https://fadhil.id/blog/blogs/posts/fast-paxos/" />
 <meta property="og:site_name" content="Distributed Systems Blog" />
@@ -56,7 +56,7 @@
 <meta property="twitter:title" content="Understanding Fast-Paxos" />
 <meta name="twitter:site" content="@fadhilkurnia" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-25T09:00:00-04:00","datePublished":"2023-06-25T09:00:00-04:00","description":"Fast-Paxos is an optimization for the Paxos consensus protocol, Fast-Paxos eliminates one one-way-delay by using larger quorum. Lamport explains Fast Paxos as an important building block for Generalized Paxos. Further, many advances consensus (or replication) protocols extend the idea of Fast Paxos to build leaderless consensus protocol, such as EPaxos. In this article, I will explain how Fast Paxos works.","headline":"Understanding Fast-Paxos","mainEntityOfPage":{"@type":"WebPage","@id":"https://fadhil.id/blog/blogs/posts/fast-paxos/"},"url":"https://fadhil.id/blog/blogs/posts/fast-paxos/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-26T18:07:17-04:00","datePublished":"2023-06-25T09:00:00-04:00","description":"Fast-Paxos is an optimization for the Paxos consensus protocol, Fast-Paxos eliminates one one-way delay by using larger quorum. Lamport explains Fast Paxos as an important building block for Generalized Paxos. Further, many advances consensus (or replication) protocols extend the idea of Fast Paxos to build leaderless consensus protocol, such as EPaxos. In this article, I will explain how Fast Paxos works.","headline":"Understanding Fast-Paxos","mainEntityOfPage":{"@type":"WebPage","@id":"https://fadhil.id/blog/blogs/posts/fast-paxos/"},"url":"https://fadhil.id/blog/blogs/posts/fast-paxos/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1098,6 +1098,30 @@
 
     <!-- lastmod date -->
     
+    <span>
+      Updated
+      <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1687817237"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Jun 26, 2023
+</em>
+
+    </span>
+    
 
   
 
@@ -1140,7 +1164,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2011 words"
+  title="2019 words"
 >
   <em>11 min</em> read</span>
 
@@ -1152,7 +1176,7 @@
 
 <div class="post-content">
   <p>Fast-Paxos is an optimization for the Paxos consensus protocol, Fast-Paxos eliminates 
-one one-way-delay by using larger quorum.
+one one-way delay by using larger quorum.
 Lamport explains Fast Paxos as an important building block for Generalized Paxos.
 Further, many advances consensus (or replication) protocols extend the idea of 
 Fast Paxos to build leaderless consensus protocol, such as EPaxos.
@@ -1164,13 +1188,13 @@ In this article, I will explain how Fast Paxos works.</p>
 
 <p>As in Paxos, there are three main actors in Fast-Paxos: <code class="language-plaintext highlighter-rouge">proposer</code>, <code class="language-plaintext highlighter-rouge">acceptor</code>, and <code class="language-plaintext highlighter-rouge">learner</code>.
 The <code class="language-plaintext highlighter-rouge">proposer</code> is responsible to propose valid values, the <code class="language-plaintext highlighter-rouge">acceptor</code> is responsible to 
-accept value under certain conditions, and the <code class="language-plaintext highlighter-rouge">learner</code> is responsible to handle the chosen value<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. As in Paxos, to support $f$ failed machines, we need $f+1$ proposers, $2f+1$ acceptors, and $f+1$ learners. Typical deployment co-locates all kinds of actors in each machine, i.e each machine simultaneously hosts proposer, acceptor, and learner. The figure below illustrate this typical deployment.</p>
+accept value under certain conditions, and the <code class="language-plaintext highlighter-rouge">learner</code> is responsible to handle the chosen value<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. As in Paxos, to support $f$ failed machines, we need $f+1$ proposers, $2f+1$ acceptors, and $f+1$ learners. Typical deployment co-locates all kinds of actors in each machine, i.e. each machine simultaneously hosts proposer, acceptor, and learner. The figure below illustrate this typical deployment.</p>
 
 <p><a href="/blogs/assets/img/fast-paxos-machine.png" class="popup img-link "><img data-src="/blogs/assets/img/fast-paxos-machine.png" alt="Typical Paxos and Fast Paxos Deployment" class="lazyload" data-proofer-ignore></a>
 <em>Typical Deployment for Paxos and Fast-Paxos</em></p>
 
 <p>Additionally, in Fast-Paxos, other than the proposer, the client can directly propose values! this 
-is the key reason why Fast-Paxos can eliminate one one-way-delay. However, to ensure safety <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, 
+is the key reason why Fast-Paxos can eliminate one one-way delay. However, to ensure safety <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, 
 the quorum requirement need to be adjusted to accommodate this direct proposal from the client; we’ll discuss this later.</p>
 
 <p>Unlike Paxos, Fast-Paxos has two types of rounds: fast round and classic round. Respectively, each type of round is represented with fast round ballot number $b_f$ and classic ballot number $b_c$. Using integer ballot number, round 0 is automatically considered as a <em>special fast round</em>, i.e $b_f=0$.</p>
@@ -1187,7 +1211,7 @@ the quorum requirement need to be adjusted to accommodate this direct proposal f
 <ol>
   <li>First, a proposer send prepare messages with ballot number for starting a fast round: $\texttt{Phase1A(}b_f\texttt{)}$.</li>
   <li>The acceptor responds the prepare messages (with $\texttt{Phase1B(}b_f\texttt{)}$) only if it has not received prepare messages from higher round. The acceptor promises not to participate in any lower round.</li>
-  <li>The proposer waits for a majority of responses from the acceptors ($f+1$ acceptors). Then, the proposer propose a special value $\texttt{ANY}$ to all the acceptors, along with its fast round ballot number: $\texttt{Phase2A(}b_f\texttt{, ANY)}$. Here, we call the peroposer that already received majority responses as the <em>coordinator</em> of a round.</li>
+  <li>The proposer waits for a majority of responses from the acceptors ($f+1$ acceptors). Then, the proposer propose a special value $\texttt{ANY}$ to all the acceptors, along with its fast round ballot number: $\texttt{Phase2A(}b_f\texttt{, ANY)}$. Here, we call the proposer that already received majority responses as the <em>coordinator</em> of a round.</li>
 </ol>
 
 <p>At the end of this initialization, acceptors that already recieved the special value $\texttt{ANY}$ can accept any value proposed by a client, without the proposer involvement.</p>
@@ -1237,7 +1261,7 @@ the quorum requirement need to be adjusted to accommodate this direct proposal f
   <li>
     <p>Case-4: From the $f+1$ acceptors, there is the highest fast round’s ballot number $b_f$ and the $f+1$ acceptors accepted different values.</p>
     <ul>
-      <li>Case-4a: Among the $f+1$ acceptors, some $1/2f+1$ (or majority of $f+1$) acceptors accepted the same value $v’$ and one of them participated in round $b_f$. In this case, the proposer has to propose $v’$ since it is possible that the non-responding $1/2f$ acceptors also accepted the same value $v’$. That is, there is already $f+1$ acceptors accepted the same value $v’$, making $v’$ as the chosen value.</li>
+      <li>Case-4a: Among the $f+1$ acceptors, some $1/2f+1$ (or majority of $f+1$) acceptors accepted the same value $v’$ and one of them participated in round $b_f$. In this case, the proposer has to propose $v’$ since it is possible that the non-responding $f$ acceptors also accepted the same value $v’$. That is, there is already $3/2f+1$ acceptors accepted the same value $v’$ in the same round $b_f$, making $v’$ as the chosen value.</li>
       <li>Case-4b: Otherwise, no value is chosen yet so the proposer is free to propose any value in its classical round.</li>
     </ul>
   </li>
@@ -1256,7 +1280,7 @@ the quorum requirement need to be adjusted to accommodate this direct proposal f
 
 <p>When the coordinator receives $3/2f+1$ Phase2B messages (or alternatively, reach timeout after receiving $f+1$ Phase2B messages) and not all of them contain the same value, then the coordinator can directly handle the conflicting values as the rules in the uncoordinated recovery that I explain previously (Case 1-4).</p>
 
-<p>In the end, the coordinated recovery only adds at least two one-way delay, compared to the addition of four one-way-delays in the uncoordinated recovery.</p>
+<p>In the end, the coordinated recovery only adds at least two one-way delay, compared to the addition of four one-way delays in the uncoordinated recovery.</p>
 
 <!-- ## The Quorum Requirement
 
@@ -1438,6 +1462,21 @@ Why $3/2f+1$ ?
 
 
 
+
+  <div id="access-lastmod" class="post">
+    <div class="panel-heading">Recently Updated</div>
+    <ul class="post-content list-unstyled ps-0 pb-1 ms-1 mt-2">
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/blogs/posts/fast-paxos/">Understanding Fast-Paxos</a>
+        </li>
+      
+    </ul>
+  </div>
+  <!-- #access-lastmod -->
 
 
       <!-- The trending tags list -->

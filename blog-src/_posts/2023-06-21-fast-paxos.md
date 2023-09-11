@@ -7,7 +7,7 @@ tags: [consensus]     # TAG names should always be lowercase
 ---
 
 Fast-Paxos is an optimization for the Paxos consensus protocol, Fast-Paxos eliminates 
-one one-way-delay by using larger quorum.
+one one-way delay by using larger quorum.
 Lamport explains Fast Paxos as an important building block for Generalized Paxos.
 Further, many advances consensus (or replication) protocols extend the idea of 
 Fast Paxos to build leaderless consensus protocol, such as EPaxos.
@@ -19,7 +19,7 @@ Before discussing the message flow in Fast-Paxos, let's discuss the actors and t
 
 As in Paxos, there are three main actors in Fast-Paxos: `proposer`, `acceptor`, and `learner`.
 The `proposer` is responsible to propose valid values, the `acceptor` is responsible to 
-accept value under certain conditions, and the `learner` is responsible to handle the chosen value[^1]. As in Paxos, to support $f$ failed machines, we need $f+1$ proposers, $2f+1$ acceptors, and $f+1$ learners. Typical deployment co-locates all kinds of actors in each machine, i.e each machine simultaneously hosts proposer, acceptor, and learner. The figure below illustrate this typical deployment.
+accept value under certain conditions, and the `learner` is responsible to handle the chosen value[^1]. As in Paxos, to support $f$ failed machines, we need $f+1$ proposers, $2f+1$ acceptors, and $f+1$ learners. Typical deployment co-locates all kinds of actors in each machine, i.e. each machine simultaneously hosts proposer, acceptor, and learner. The figure below illustrate this typical deployment.
 
 ![Typical Paxos and Fast Paxos Deployment](/assets/img/fast-paxos-machine.png)
 _Typical Deployment for Paxos and Fast-Paxos_
@@ -27,7 +27,7 @@ _Typical Deployment for Paxos and Fast-Paxos_
 [^1]: In replicated state machine (RSM), the learner is reponsible to execute the chosen value which commonly is RSM command (e.g `SET X 10`, `ADD X 13`, etc).
 
 Additionally, in Fast-Paxos, other than the proposer, the client can directly propose values! this 
-is the key reason why Fast-Paxos can eliminate one one-way-delay. However, to ensure safety [^2], 
+is the key reason why Fast-Paxos can eliminate one one-way delay. However, to ensure safety [^2], 
 the quorum requirement need to be adjusted to accommodate this direct proposal from the client; we'll discuss this later.
 
 [^2]: Safety: at most one value is chosen. Another way of saying safety: when a value $v$ is chosen in round $i$, then any round $j>i$ always propose the same value $v$.
@@ -45,7 +45,7 @@ _Initialization in Fast-Paxos: Phase1A, Phase1B, and Phase2A. The coordinator is
 
 1. First, a proposer send prepare messages with ballot number for starting a fast round: $\texttt{Phase1A(}b_f\texttt{)}$.
 2. The acceptor responds the prepare messages (with $\texttt{Phase1B(}b_f\texttt{)}$) only if it has not received prepare messages from higher round. The acceptor promises not to participate in any lower round.
-3. The proposer waits for a majority of responses from the acceptors ($f+1$ acceptors). Then, the proposer propose a special value $\texttt{ANY}$ to all the acceptors, along with its fast round ballot number: $\texttt{Phase2A(}b_f\texttt{, ANY)}$. Here, we call the peroposer that already received majority responses as the _coordinator_ of a round.
+3. The proposer waits for a majority of responses from the acceptors ($f+1$ acceptors). Then, the proposer propose a special value $\texttt{ANY}$ to all the acceptors, along with its fast round ballot number: $\texttt{Phase2A(}b_f\texttt{, ANY)}$. Here, we call the proposer that already received majority responses as the _coordinator_ of a round.
 
 At the end of this initialization, acceptors that already recieved the special value $\texttt{ANY}$ can accept any value proposed by a client, without the proposer involvement.
 
@@ -88,7 +88,7 @@ Let's handle this by listing all the possibilities. When a proposer completes Ph
 - Case-3: From the $f+1$ acceptors, there is the highest fast round's ballot number $b_f$ and all the $f+1$ acceptors accepted the same value $v'$. In this case, the proposer has to propose $v'$ in Phase2A since it is possible that the non-responding $1/2f$ acceptors also accepted the same value $v'$. That is, it is possible that $3/2f+1$ acceptors accepted the same value $v'$ making $v'$ as the chosen value.
 
 - Case-4: From the $f+1$ acceptors, there is the highest fast round's ballot number $b_f$ and the $f+1$ acceptors accepted different values.
-  - Case-4a: Among the $f+1$ acceptors, some $1/2f+1$ (or majority of $f+1$) acceptors accepted the same value $v'$ and one of them participated in round $b_f$. In this case, the proposer has to propose $v'$ since it is possible that the non-responding $1/2f$ acceptors also accepted the same value $v'$. That is, there is already $f+1$ acceptors accepted the same value $v'$, making $v'$ as the chosen value.
+  - Case-4a: Among the $f+1$ acceptors, some $1/2f+1$ (or majority of $f+1$) acceptors accepted the same value $v'$ and one of them participated in round $b_f$. In this case, the proposer has to propose $v'$ since it is possible that the non-responding $f$ acceptors also accepted the same value $v'$. That is, there is already $3/2f+1$ acceptors accepted the same value $v'$ in the same round $b_f$, making $v'$ as the chosen value.
   - Case-4b: Otherwise, no value is chosen yet so the proposer is free to propose any value in its classical round.
 
 
@@ -105,7 +105,7 @@ This configuration enables us to skip Phase1 in the uncoordinated recovery, and 
 
 When the coordinator receives $3/2f+1$ Phase2B messages (or alternatively, reach timeout after receiving $f+1$ Phase2B messages) and not all of them contain the same value, then the coordinator can directly handle the conflicting values as the rules in the uncoordinated recovery that I explain previously (Case 1-4).
 
-In the end, the coordinated recovery only adds at least two one-way delay, compared to the addition of four one-way-delays in the uncoordinated recovery.
+In the end, the coordinated recovery only adds at least two one-way delay, compared to the addition of four one-way delays in the uncoordinated recovery.
 
 <!-- ## The Quorum Requirement
 
